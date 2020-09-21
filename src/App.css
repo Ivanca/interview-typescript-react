@@ -1,46 +1,142 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
+  font-family: Helvetica;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+div {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root, .App {
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-form {
+  min-height: 100%;
+  display: flex;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0 20px;
+}
+
+.results {
+  max-width: 904px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.topbar {
+  /* Rectangle 165 */
+  position: absolute;
+  width: 1366px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+  background: #FAFAFA;
+}
+
+.search-form input {
+  background: url(/money-sign.svg) no-repeat left 0.75em top 0.9em;
+  border: 1px solid #DCDCDC;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 19px;
+  text-indent: 20px;
+  display: block;
+  min-width: 100px;
+  width: 100%;
+  margin-bottom: 42px;
+}
+
+.search-form label {
+  display: block;
+  font-size: 14px;
+  color: #5F5F5F;
+  line-height: 2.4em;
+}
+
+.search-form h1 {
+  font-size: 32px;
+  line-height: 126%;
+  color: #3F3E3A;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.search-form h2 {
+  font-size: 16px;
+  line-height: 126%;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 2.3em;
+  text-align: center;
+}
+
+.search-form button[type="submit"] {
   color: white;
+  width: 159px;
+  height: 46px;
+  /* Interaction/Blue03 */
+  background: #5C7BEB;
+  border-radius: 4px;
+  float: right;
+  border: 0;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+
+@media screen and (max-width: 720px) {
+  .search-form button[type="submit"] {
+    width: 100%;
+  }
+}
+.search-form .right-arrow {
+  background: url(/right-arrow.svg) no-repeat left 0.75em top 0.9em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 30px;
+}
+
+.search-form form {
+  min-width: 90px;
+  display: block;
+}
+
+.profile {
+  width: 288px;
+  min-height: 308px;
+  background: #FFFFFF;
+  box-shadow: 0px 8px 16px rgba(29, 35, 58, 0.1);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 33px 0 0 0;
+  justify-content: space-between;
+  color: #5F5F5F;
+}
+
+.profile img[src=""] {
+  opacity: 0;
 }
 
 .avatar-container {
-  max-width: 100px;
-  min-height: 100px;
-  background-size: contain;
+  width: 112px;
+  min-height: 112px;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+  border-radius: 100px;
 }
 
 .female .avatar-container {
@@ -49,4 +145,77 @@
 
 .male .avatar-container {
   background-image: url("/male-profile.jpg");
+}
+
+.results > h1, .results > h2 {
+  text-align: center;
+}
+
+.profile h1 {
+  font-size: 20px;
+  margin: 0;
+  padding-top: 12px;
+}
+
+.profile h2 {
+  font-size: 16px;
+  margin: 0;
+  padding-bottom: 12px;
+  font-weight: normal;
+}
+
+.income {
+  display: block;
+  background: #F5F5F5;
+  padding: 1.5em 0;
+  border-radius: 0 0 12px 12px;
+}
+
+.order-by-label {
+  font-size: 14px;
+}
+
+.order-container select {
+  font-size: 16px;
+  padding: 14px;
+  color: #8B8B8B;
+  margin: 10px 0 10px 0;
+  border: 1px solid #DCDCDC;
+  box-sizing: border-box;
+  min-width: 25%;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 900px) {
+  
+  .order-container {
+    margin: 0 4%;
+  }
+
+  .profiles {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .profile {
+    display: block;
+    min-height: auto;
+    width: 92%;
+    padding: 20px;
+  }
+
+  .avatar-container {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .profile h1, .profile h2 {
+    text-align: left;
+  }
+
+  .income {
+      background: none;
+      text-align: left;
+      padding: 0;
+  }
 }
